@@ -21,18 +21,18 @@ using namespace boost;
 int main(int argc, char *argv[]) {
 	
 	bool T = true;//continuous loop to run entire program
-	while (T == true) {
-		if (getlogin() != NULL) {
-			cout << getlogin() << "@";
+	while (T == true) {//always true
+		if (getlogin() != NULL) {//only runs if there is a login
+			cout << getlogin() << "@";//display login and @
 		}
 
-		char hostname[255] = {0};
-		if (gethostname(hostname, 255) != -1) {
-			gethostname(hostname, 255);
-			cout << hostname << " ";
+		char hostname[255] = {0};//max bytes is 255 in hostname
+		if (gethostname(hostname, 255) != -1) {//if there is a hostname
+			gethostname(hostname, 255);//put hostname -> hostname
+			cout << hostname << " ";//cout host name
 		}
 
-		cout << "$" << " ";
+		cout << "$" << " ";//prompt
 
 
 		string cmds;//what the user types in
@@ -56,22 +56,26 @@ int main(int argc, char *argv[]) {
 
 		int counter = 0;//used to keep track of the end of cstr
 
+		if (cmds.find("exit") != std::string::npos) {
+			exit(0);//exits the program if exit is found
+		}
 
-        	char *pch = strtok(parse, " ");//parsing with space char
+        	char *pch = strtok(parse, " ;");//parsing with space char
         	while (pch != NULL)//until we hit a null character
         	{
         		cstr[counter] = pch;//parsing into cstr
+			cout << pch;
         		counter++;//increment the counter
         		pch = strtok(NULL, " ");//continue parsing
        		}
 	        cstr[counter] = NULL;//to avoid a seg fault when running
 
-		pid_t pid = fork();//child
+		int pid = fork();//child
 		
 
 		if (pid == -1)//if a child fails
 		{
-			cout << "child failed" << endl;
+			perror("Child failed");
 			exit(1);
 		}
 
@@ -79,10 +83,15 @@ int main(int argc, char *argv[]) {
 		{
 			wait(0);//wait until child finishes
 			int run = 0;//starting number of commands
+
 			while (run < argc) {//first to last command
-				execvp(cstr[run],cstr);//run the commands
-				run++;//increment run
+				if(execvp(cstr[run],cstr) == -1) {//run the cmds
+					perror("Command failed to run");
+					exit(1);
+				}
+				run++;
 			}
+
 			exit(0);
 		}
 	}
