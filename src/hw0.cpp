@@ -22,6 +22,19 @@ int main(int argc, char *argv[]) {
 	
 	bool T = true;//continuous loop to run entire program
 	while (T == true) {
+		if (getlogin() != NULL) {
+			cout << getlogin() << "@";
+		}
+
+		char hostname[255] = {0};
+		if (gethostname(hostname, 255) != -1) {
+			gethostname(hostname, 255);
+			cout << hostname << " ";
+		}
+
+		cout << "$" << " ";
+
+
 		string cmds;//what the user types in
 		getline(cin, cmds);//takes what user types
 
@@ -30,7 +43,7 @@ int main(int argc, char *argv[]) {
 		char *parse = new char[sz+1];//c string array using size of cmds
 		strcpy(parse, cmds.c_str());//turn cmds into cstring in parse
 	
-		for (int i = 0; i < cmds.size(); i++)//loop for comments
+		for (unsigned int i = 0; i < cmds.size(); i++)//loop for comment
 		{
 			if (cmds.at(i) == '#')//if user inputed a comment
 			{
