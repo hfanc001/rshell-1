@@ -64,18 +64,18 @@ int main(int argc, char *argv[]) {
        		}
 	        cstr[counter] = NULL;//to avoid a seg fault when running
 
-		int i = 0;//counter for cmds
+		unsigned int i = 0;//counter for cmds
 		while (i < first.size()) {
 			int pid = fork();//child
 		
-        	        if(pid == 0)//if parent
-               	 {
-                	        wait(0);//wait until child finishes
-
-                        	        if(execvp(first.at(i),cstr) == -1) {//run the cmds
-                                	        perror("Command failed to run");//err msg
-                                        	exit(1);
-	                                }
+	                if(pid == 0)//if parent
+        	        {
+                        wait(0);//wait until child finishes
+ 
+          		if(execvp(first.at(i),cstr) == -1) {//run the cmds
+                       	        perror("Command failed to run");//err msg
+                               	exit(1);
+                      	}
 
 				exit(0);
 			}

@@ -6,4 +6,5 @@ Pressing enter with no input will segfault
 Typing in only whitespace will cause a segfault(fixed)
 commands are read onto the wrong line
 echo works, but having # will cut everything out
+echo will also cout a failed function call but work
 entering just a comment will lead to a segfault (fixed)
