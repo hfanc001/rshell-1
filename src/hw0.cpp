@@ -65,31 +65,31 @@ int main(int argc, char *argv[]) {
 	        cstr[counter] = NULL;//to avoid a seg fault when running
 
 		int i = 0;//counter for cmds
-		int pid = fork();//child
+		while (i < first.size()) {
+			int pid = fork();//child
 		
-                if(pid == 0)//if parent
-                {
-                        wait(0);//wait until child finishes
-                        int run = 0;//starting number of commands
+        	        if(pid == 0)//if parent
+               	 {
+                	        wait(0);//wait until child finishes
 
-                                if(execvp(first.at(i),cstr) == -1) {//run the cmds
-                                        perror("Command failed to run");//err msg
-                                        exit(1);
-                                }
+                        	        if(execvp(first.at(i),cstr) == -1) {//run the cmds
+                                	        perror("Command failed to run");//err msg
+                                        	exit(1);
+	                                }
 
-			exit(0);
+				exit(0);
+			}
+
+
+
+
+			else if (pid == -1)//if a child fails
+			{
+				perror("Child failed");//err message
+				exit(1);
+			}
+			i++;//increment counter
 		}
-
-
-
-
-		else if (pid == -1)//if a child fails
-		{
-			perror("Child failed");//err message
-			exit(1);
-		}
-		i++;//increment counter
-
-	}
+	}	
 	return 0;
 }
