@@ -3,7 +3,7 @@ rshell is a program that is meant to behave like a terminal. It is meant to run 
 Bugs:
 None of the connecters are working
 Pressing enter with no input will segfault
-Typing in only whitespace will cause a segfault
+Typing in only whitespace will cause a segfault(fixed)
 commands are read onto the wrong line
 echo works, but having # will cut everything out
-entering just a comment will lead to a segfault
+entering just a comment will lead to a segfault (fixed)
