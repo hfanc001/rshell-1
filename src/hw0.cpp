@@ -1,12 +1,3 @@
-// Name Alex Tan
-// Net ID: atan009
-// Assignment #0: rshell
-// Lab Section: 022
-// TA: Taeyoung Kim
-// Due date: 10/21/14
-// I hereby certify that I have no recieved assistance on this assignment,
-// or used code, from ANY outside source other than the instruction team.
-
 #include <iostream>
 #include <unistd.h>
 #include <sys/types.h>
@@ -38,6 +29,11 @@ int main(int argc, char *argv[]) {
 		string cmds;//what the user types in
 		getline(cin, cmds);//takes what user types
 
+                if (cmds.find("exit") != std::string::npos) {
+                        exit(0);//exits the program if exit is found
+                }
+
+
 		int sz = cmds.size();//size of what user typed in
 
 		char *parse = new char[sz+1];//c string array using size of cmds
@@ -56,44 +52,44 @@ int main(int argc, char *argv[]) {
 
 		int counter = 0;//used to keep track of the end of cstr
 
-		if (cmds.find("exit") != std::string::npos) {
-			exit(0);//exits the program if exit is found
-		}
+		vector<char*> first;//vctr to hold all commands
 
         	char *pch = strtok(parse, " ;");//parsing with space char
         	while (pch != NULL)//until we hit a null character
         	{
         		cstr[counter] = pch;//parsing into cstr
-			cout << pch;
+			first.push_back(pch);//push back cmds
         		counter++;//increment the counter
         		pch = strtok(NULL, " ");//continue parsing
        		}
 	        cstr[counter] = NULL;//to avoid a seg fault when running
 
+		int i = 0;//counter for cmds
 		int pid = fork();//child
 		
+                if(pid == 0)//if parent
+                {
+                        wait(0);//wait until child finishes
+                        int run = 0;//starting number of commands
 
-		if (pid == -1)//if a child fails
-		{
-			perror("Child failed");
-			exit(1);
-		}
-
-		else if(pid == 0)//if parent
-		{
-			wait(0);//wait until child finishes
-			int run = 0;//starting number of commands
-
-			while (run < argc) {//first to last command
-				if(execvp(cstr[run],cstr) == -1) {//run the cmds
-					perror("Command failed to run");
-					exit(1);
-				}
-				run++;
-			}
+                                if(execvp(first.at(i),cstr) == -1) {//run the cmds
+                                        perror("Command failed to run");//err msg
+                                        exit(1);
+                                }
 
 			exit(0);
 		}
+
+
+
+
+		else if (pid == -1)//if a child fails
+		{
+			perror("Child failed");//err message
+			exit(1);
+		}
+		i++;//increment counter
+
 	}
 	return 0;
 }

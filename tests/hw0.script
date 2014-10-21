@@ -1,0 +1,69 @@
+Script started on Mon 20 Oct 2014 06:29:28 PM PDT
+~
+atan009@well $ cd rshell
+~/rshell
+atan009@well $ cd src
+~/rshell/src
+atan009@well $ ./a.out
+atan009@well.cs.ucr.edu $ pwd
+atan009@well.cs.ucr.edu $ /class/classes/atan009/rshell/src
+ls
+atan009@well.cs.ucr.edu $ a.out  hw0.cpp	hw0.script
+ls -a
+atan009@well.cs.ucr.edu $ .  ..  a.out  hw0.cpp  hw0.script
+ls -R
+atan009@well.cs.ucr.edu $ .:
+a.out  hw0.cpp	hw0.script
+ls -l
+atan009@well.cs.ucr.edu $ total 28
+-rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
+-rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
+-rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
+ls -al
+atan009@well.cs.ucr.edu $ total 36
+drwx------ 2 atan009 classes  4096 Oct 20 18:29 .
+drwx------ 5 atan009 classes  4096 Oct 19 23:06 ..
+-rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
+-rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
+-rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
+-s  ls -la
+atan009@well.cs.ucr.edu $ total 36
+drwx------ 2 atan009 classes  4096 Oct 20 18:29 .
+drwx------ 5 atan009 classes  4096 Oct 19 23:06 ..
+-rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
+-rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
+-rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
+ls -RAL
+atan009@well.cs.ucr.edu $ .:
+a.out  hw0.cpp	hw0.script
+ls -Ral
+atan009@well.cs.ucr.edu $ .:
+total 36
+drwx------ 2 atan009 classes  4096 Oct 20 18:29 .
+drwx------ 5 atan009 classes  4096 Oct 19 23:06 ..
+-rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
+-rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
+-rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
+ls     -a
+atan009@well.cs.ucr.edu $ .  ..  a.out  hw0.cpp  hw0.script
+
+atan009@well.cs.ucr.edu $ terminate called after throwing an instance of 'std::out_of_range'
+  what():  vector::_M_range_check
+ 
+atan009@well.cs.ucr.edu $ terminate called after throwing an instance of 'std::out_of_range'
+  what():  vector::_M_range_check
+echo "j hello"
+atan009@well.cs.ucr.edu $ "hello"
+echo "hee llo #world"
+atan009@well.cs.ucr.edu $ "hello
+#world
+atan009@well.cs.ucr.edu $ terminate called after throwing an instance of 'std::out_of_range'
+  what():  vector::_M_range_check
+mkdir derp
+atan009@well.cs.ucr.edu $ rmdir derp
+atan009@well.cs.ucr.edu $ cat     exit
+~/rshell/src
+atan009@well $ exit
+exit
+
+Script done on Mon 20 Oct 2014 06:31:57 PM PDT
