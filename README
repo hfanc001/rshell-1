@@ -2,9 +2,9 @@ rshell is a program that is meant to behave like a terminal. It is meant to run 
 
 Bugs:
 None of the connecters are working
-Pressing enter with no input will segfault
-Typing in only whitespace will cause a segfault(fixed)
-commands are read onto the wrong line
 echo works, but having # will cut everything out
 echo will also cout a failed function call but work
-entering just a comment will lead to a segfault (fixed)
+flags work but will give out an error message
+cd does not work
+semicolon and pipe and and do not work - connecters do not work
+ls can run but not with MUTLTIPLE flags

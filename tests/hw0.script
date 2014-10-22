@@ -1,69 +1,1666 @@
-Script started on Mon 20 Oct 2014 06:29:28 PM PDT
+Script started on Tue 21 Oct 2014 11:03:40 PM PDT
 ~
-atan009@well $ cd rshell
-~/rshell
-atan009@well $ cd src
+atan009@well $ ls
+[00m[00;34mDesktop[00m/  [00;34mDocuments[00m/  [00;34mDownloads[00m/  [00;32mFirefox_wallpaper.png[00m*  [00;34mfirstrepo[00m/  [00;34mlab2[00m/  [00;34mMusic[00m/  [00;34mPictures[00m/  [00;34mPublic[00m/  [00;34mrshell[00m/  [00;34mTemplates[00m/  [00;34mVideos[00m/
+[m~
+atan009@well $ cd rshell/src
+~/rshell/src
+atan009@well $ g++ hw0.cpp
 ~/rshell/src
 atan009@well $ ./a.out
+atan009@well.cs.ucr.edu $ 
+atan009@well.cs.ucr.edu $  
+atan009@well.cs.ucr.edu $   
+atan009@well.cs.ucr.edu $ ls
+a.out  hw0.cpp
+atan009@well.cs.ucr.edu $ ls -a
+.  ..  a.out  hw0.cpp  .nfs000000000038556600000dc2
+Command failed to run: No such file or directory
 atan009@well.cs.ucr.edu $ pwd
-atan009@well.cs.ucr.edu $ /class/classes/atan009/rshell/src
-ls
-atan009@well.cs.ucr.edu $ a.out  hw0.cpp	hw0.script
-ls -a
-atan009@well.cs.ucr.edu $ .  ..  a.out  hw0.cpp  hw0.script
-ls -R
-atan009@well.cs.ucr.edu $ .:
-a.out  hw0.cpp	hw0.script
-ls -l
-atan009@well.cs.ucr.edu $ total 28
--rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
--rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
--rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
-ls -al
-atan009@well.cs.ucr.edu $ total 36
-drwx------ 2 atan009 classes  4096 Oct 20 18:29 .
-drwx------ 5 atan009 classes  4096 Oct 19 23:06 ..
--rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
--rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
--rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
--s  ls -la
-atan009@well.cs.ucr.edu $ total 36
-drwx------ 2 atan009 classes  4096 Oct 20 18:29 .
-drwx------ 5 atan009 classes  4096 Oct 19 23:06 ..
--rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
--rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
--rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
-ls -RAL
-atan009@well.cs.ucr.edu $ .:
-a.out  hw0.cpp	hw0.script
-ls -Ral
-atan009@well.cs.ucr.edu $ .:
-total 36
-drwx------ 2 atan009 classes  4096 Oct 20 18:29 .
-drwx------ 5 atan009 classes  4096 Oct 19 23:06 ..
--rwx------ 1 atan009 classes 24079 Oct 20 18:26 a.out
--rw------- 1 atan009 classes  2635 Oct 20 18:26 hw0.cpp
--rw------- 1 atan009 classes     0 Oct 20 18:29 hw0.script
-ls     -a
-atan009@well.cs.ucr.edu $ .  ..  a.out  hw0.cpp  hw0.script
+/class/classes/atan009/rshell/src
+atan009@well.cs.ucr.edu $  ls -a
+.  ..  a.out  hw0.cpp  .nfs000000000038556600000dc2
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ echo hello
+hello
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ echo "hello"
+"hello"
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $  echo hello
+hello
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ #hastag   htag
+atan009@well.cs.ucr.edu $  #comment
+atan009@well.cs.ucr.edu $ echo hello#comment
+hello
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ls -a || echo hello
+ls: ||: No such file or directory
+ls: echo: No such file or directory
+ls: hello: No such file or directory
+Command failed to run: No such file or directory
+Command failed to run: No such file or directory
+hello
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ date
+Tue Oct 21 23:08:54 PDT 2014
+atan009@well.cs.ucr.edu $ cal
+    October 2014    
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 [7m21[m 22 23 24 25
+26 27 28 29 30 31
 
-atan009@well.cs.ucr.edu $ terminate called after throwing an instance of 'std::out_of_range'
-  what():  vector::_M_range_check
- 
-atan009@well.cs.ucr.edu $ terminate called after throwing an instance of 'std::out_of_range'
-  what():  vector::_M_range_check
-echo "j hello"
-atan009@well.cs.ucr.edu $ "hello"
-echo "hee llo #world"
-atan009@well.cs.ucr.edu $ "hello
-#world
-atan009@well.cs.ucr.edu $ terminate called after throwing an instance of 'std::out_of_range'
-  what():  vector::_M_range_check
-mkdir derp
-atan009@well.cs.ucr.edu $ rmdir derp
-atan009@well.cs.ucr.edu $ cat     exit
+atan009@well.cs.ucr.edu $ uptime
+ 23:09:05 up 21 days,  6:46, 63 users,  load average: 0.15, 0.12, 0.15
+atan009@well.cs.ucr.edu $ w
+ 23:09:11 up 21 days,  6:47, 62 users,  load average: 0.21, 0.13, 0.15
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+rheng001 :1003    99.176.58.109    19:24   ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+smire002 pts/2    169.235.27.112   Mon13   26:33m  1.61s  1.56s ssh hamid@h4.cs.ucr.edu
+smire002 pts/5    169.235.27.112   Mon13   26:33m  1.27s  1.22s ssh hamid@h4.cs.ucr.edu
+smire002 pts/7    169.235.27.112   Mon13   26:32m  1.43s  1.39s ssh hamid@h4.cs.ucr.edu
+smire002 pts/8    169.235.27.112   Mon13   26:32m  1.16s  1.12s ssh hamid@h4.cs.ucr.edu
+smire002 pts/9    169.235.27.112   17:04    1:38m  3.87s  3.83s ssh hamid@h4.cs.ucr.edu
+tli010   pts/11   96.229.13.43     05:29    1:40m  1:12   1:12  ssh poseidon
+smire002 pts/17   169.235.27.112   Mon13   26:32m  1.04s  1.00s ssh hamid@h4.cs.ucr.edu
+hfanc001 pts/18                    23:04    1:20   0.00s  0.00s bash -i
+mwile001 pts/19   169.235.27.198   17:07    3:41m  0.09s  0.04s ssh dblab-rack20
+pahme002 pts/21   169.235.25.203   Fri17    4days  0.30s  0.26s ssh pahme002@tardis.cs.ucr.edu
+stelo    pts/24   173.51.112.212   20:15    1:58m  2.80s  2.76s pine
+kvora001 pts/26   128.195.55.209   15Oct14 34:59m  1.47s  1.41s ssh keval@caps02.cs.ucr.edu
+kelly    pts/27   173.58.53.165    21:01    2:03m  0.94s  0.90s pine
+ssada003 pts/30   75.19.172.60     19:51    1:24m  0.20s  0.15s ssh dblab-rack22.cs.ucr.edu
+kle016   :1006    66.215.183.201   21:49   ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+kvora001 pts/12   128.195.55.209   15Oct14 37:17m 12.39s 12.32s ssh keval@caps02.cs.ucr.edu
+smire002 pts/13   169.235.27.112   Mon13   26:32m  0.99s  0.94s ssh hamid@h4.cs.ucr.edu
+atan009  pts/15                    23:03    0.00s  0.06s  0.01s ./a.out
+hfanc001 pts/16   169.235.212.226  23:04    1:20   0.05s  0.01s script hi
+atan009  pts/28   166.170.50.135   21:46    1:17m  0.38s  0.30s vim hw0.cpp
+blu006   pts/29   142.129.142.111  21:38    1:30m  0.15s  0.09s vim main.cpp
+atan009  pts/31   169.235.214.161  21:44    1:24m  0.05s  0.05s -bash
+schen064 pts/32   169.235.27.105   Mon17   29:41m  0.06s  0.06s -bash
+pahme002 pts/34   169.235.25.203   10Oct14 11days  0.36s  0.29s ssh pahme002@tardis.cs.ucr.edu
+kle016   pts/36   :1006            21:49    1:20m  0.00s  1.25s kded --new-startup
+kle016   pts/37   :1006            21:49    2:35   3.66s  3.57s vim rshell.cpp
+kle016   pts/38   :1006            22:09    2:32   0.10s  0.10s /bin/bash
+gbrax001 pts/39   172.250.227.163  21:58    1:03m  0.06s  0.06s -bash
+mshah008 pts/1    71.93.164.88     23:01    1.00s  0.19s  0.14s ssh moloud@moloud
+atan009  pts/41   169.235.214.161  22:00    0.00s  0.41s  0.01s script hw0.script
+hfanc001 pts/42   169.235.212.226  22:13   23:58   0.52s  0.43s vim README
+mshah008 pts/43   71.93.164.88     15:32   17:24   0.25s  0.21s ssh moloud@moloud
+hfanc001 pts/45   169.235.212.226  20:20    1:32m  0.16s  0.16s -bash
+hli035   pts/47   66.215.210.22    22:22    1:08   0.55s  0.51s ssh hli035@tardis.cs.ucr.edu
+pwu011   pts/49   202.127.20.33    19:38    3:30m  0.05s  0.05s -bash
+shern026 :1008    169.235.92.109   22:16   ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+mtobo001 :1009    75.142.199.118   12Oct14 ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+hli035   pts/46   66.215.210.22    22:18    1:44   0.63s  0.58s ssh hli035@tardis.cs.ucr.edu
+hfanc001 pts/48   169.235.212.226  22:24    3.00s  0.19s  0.19s -bash
+alupe001 pts/50   71.95.57.0       22:34   31:20   6.60s  0.06s -bash
+hfanc001 pts/53   169.235.212.226  22:40   18:30   0.15s  0.08s vim exec.cpp
+rgosh001 pts/55   66.215.183.201   19:52    2:15m  0.14s  0.05s vim lab2-5.asm
+smehr003 :1010    76.95.30.67      22:34   ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+apeer001 :1004    169.235.175.99   Thu17   ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+philip   :1012    66.215.200.78    Fri21   ?xdm?   3:59m  0.00s /bin/bash /usr/bin/nxserver
+lxu003   pts/56   169.235.89.87    22:45    0.00s  0.55s  0.49s vim ex2.asm
+atost001 pts/58   97.90.202.214    22:54   19.00s  0.42s  0.38s ssh hammer
+lxu003   pts/60   169.235.89.87    22:45   10:45   0.07s  0.07s -bash
+sjaim002 pts/61   71.84.70.87      22:48   19:37   0.07s  0.07s -bash
+mwile001 pts/62   98.148.146.158   22:56   12:08   0.10s  0.05s ssh dblab-rack22
+mummem   pts/65   169.235.25.144   Fri13   32:57m  0.07s  0.00s screen bash
+emull005 pts/67   169.235.29.151   19:13    1.00s  6.83s  0.18s sshd: emull005 [priv]
+mummem   pts/69   :pts/65:S.0      Fri13   32:57m  0.35s  0.32s ssh -L 59595:169.235.25.144:5900 mummem@169.235.25.144
+smire002 pts/75   169.235.27.112   Fri16    4days  0.04s  0.04s -bash
+kvora001 pts/78   128.195.55.209   15Oct14  4days  4.50s  4.44s ssh keval@caps02.cs.ucr.edu
+pahme002 pts/68   169.235.25.203   Fri16    4days  0.16s  0.10s ssh pahme002@tardis.cs.ucr.edu
+rheng001 pts/59   :1003.0          19:40   13:50   0.33s  7.98s gnome-terminal
+atan009@well.cs.ucr.edu $ whoami
+atan009
+atan009@well.cs.ucr.edu $ fingeruser     user
+Login: ftp            			Name: FTP User
+Directory: /var/ftp                 	Shell: /sbin/nologin
+Never logged in.
+No mail.
+No Plan.
+
+Login: rpc            			Name: Portmapper RPC user
+Directory: /                        	Shell: /sbin/nologin
+Never logged in.
+No mail.
+No Plan.
+
+Login: oprofile       			Name: Special user account to be used by OProfile
+Directory: /home/oprofile           	Shell: /sbin/nologin
+Never logged in.
+No mail.
+No Plan.
+
+Login: rpcuser        			Name: RPC Service User
+Directory: /var/lib/nfs             	Shell: /sbin/nologin
+Never logged in.
+No mail.
+No Plan.
+
+Login: nfsnobody      			Name: Anonymous NFS User
+Directory: /var/lib/nfs             	Shell: /sbin/nologin
+Never logged in.
+No mail.
+No Plan.
+
+Login: sabayon        			Name: Sabayon user
+Directory: /home/sabayon            	Shell: /sbin/nologin
+Never logged in.
+No mail.
+No Plan.
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ u  name -a
+Linux well.cs.ucr.edu 2.6.18-398.el5 #1 SMP Tue Sep 16 20:50:52 EDT 2014 x86_64 x86_64 x86_64 GNU/Linux
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 16
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.01
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 17
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.96
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 18
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.55
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 19
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.84
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 4
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 20
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.85
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 5
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 21
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.88
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 6
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 22
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.83
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 7
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 23
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.89
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 8
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 24
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.83
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 9
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 25
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.91
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 10
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 26
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.32
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 11
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 27
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3797.51
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 12
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 32
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.10
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 13
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 33
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3801.63
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 14
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 34
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.50
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 15
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 35
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3798.75
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 16
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 36
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3801.96
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 17
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 37
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.28
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 18
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 38
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3802.48
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 19
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 39
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.29
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 20
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 40
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3801.03
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 21
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 41
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.80
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 22
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 42
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.93
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 23
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 43
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.73
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 24
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 48
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.02
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 25
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 49
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.75
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 26
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 50
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.67
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 27
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 51
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.75
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 28
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 52
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.74
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 29
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 53
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.17
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 30
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 54
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.38
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 31
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 55
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3798.64
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 32
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 56
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.72
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 33
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 57
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.29
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 34
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 58
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.75
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 35
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 59
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.14
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 36
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 64
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.98
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 37
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 65
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3801.94
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 38
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 66
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.16
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 39
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 67
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.71
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 40
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 68
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.73
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 41
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 69
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.77
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 42
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 0
+cpu cores	: 12
+apicid		: 70
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.32
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 43
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 1
+cpu cores	: 12
+apicid		: 71
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3798.78
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 44
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 2
+cpu cores	: 12
+apicid		: 72
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.11
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 45
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 3
+cpu cores	: 12
+apicid		: 73
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.73
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 46
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 4
+cpu cores	: 12
+apicid		: 74
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3799.75
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+processor	: 47
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 9
+model name	: AMD Opteron(tm) Processor 6168
+stepping	: 1
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 4
+siblings	: 12
+core id		: 5
+cpu cores	: 12
+apicid		: 75
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips	: 3800.28
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+Command failed to run: Permission denied
+atan009@well.cs.ucr.edu $ cat /procmen   /meminfo
+MemTotal:     264285364 kB
+MemFree:      249708736 kB
+Buffers:        453896 kB
+Cached:       11401400 kB
+SwapCached:          0 kB
+Active:        6883220 kB
+Inactive:      6165456 kB
+HighTotal:           0 kB
+HighFree:            0 kB
+LowTotal:     264285364 kB
+LowFree:      249708736 kB
+SwapTotal:    23438072 kB
+SwapFree:     23438072 kB
+Dirty:             532 kB
+Writeback:           0 kB
+AnonPages:     1193320 kB
+Mapped:         127920 kB
+Slab:          1292300 kB
+PageTables:     112616 kB
+NFS_Unstable:        0 kB
+Bounce:              0 kB
+CommitLimit:  155580752 kB
+Committed_AS:  3620348 kB
+VmallocTotal: 34359738367 kB
+VmallocUsed:    277848 kB
+VmallocChunk: 34359458151 kB
+HugePages_Total:     0
+HugePages_Free:      0
+HugePages_Rsvd:      0
+Hugepagesize:     2048 kB
+Command failed to run: Permission denied
+atan009@well.cs.ucr.edu $ df /h  -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/md0              210G   90G  110G  46% /
+tmpfs                 127G  180K  127G   1% /dev/shm
+nemo:/vol/vol0/csprofs
+                      682G  621G   62G  92% /home/csprofs
+nemo:/vol/vol0/csgrads
+                      682G  621G   62G  92% /home/csgrads
+nemo:/vol/vol0/csmajs
+                      682G  621G   62G  92% /home/csmajs
+nemo:/vol/vol0/classes
+                      682G  621G   62G  92% /class/classes
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ du
+44	.
+atan009@well.cs.ucr.edu $ free
+             total       used       free     shared    buffers     cached
+Mem:     264285364   14574776  249710588          0     453896   11401404
+-/+ buffers/cache:    2719476  261565888
+Swap:     23438072          0   23438072
+atan009@well.cs.ucr.edu $ ^[[A
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ^R
+
+atan009@well.cs.ucr.edu $ man execvp
+7[?47h[?1h=EXEC(3)                    Linux Programmer’s Manual                   EXEC(3)
+
+[1mNAME[m
+       execl, execlp, execle, execv, execvp - execute a file
+
+[1mSYNOPSIS[m
+       [1m#include[m [1m<unistd.h>[m
+
+       [1mextern[m [1mchar[m [1m**environ;[m
+
+       [1mint[m [1mexecl(const[m [1mchar[m [1m*[m[4mpath[m[1m,[m [1mconst[m [1mchar[m [1m*[m[4marg[m[1m,[m [1m...);[m
+       [1mint[m [1mexeclp(const[m [1mchar[m [1m*[m[4mfile[m[1m,[m [1mconst[m [1mchar[m [1m*[m[4marg[m[1m,[m [1m...);[m
+       [1mint[m [1mexecle(const[m [1mchar[m [1m*[m[4mpath[m[1m,[m [1mconst[m [1mchar[m [1m*[m[4marg[m[1m,[m
+                  [1m...,[m [1mchar[m [1m*[m [1mconst[m [4menvp[m[1m[]);[m
+       [1mint[m [1mexecv(const[m [1mchar[m [1m*[m[4mpath[m[1m,[m [1mchar[m [1m*const[m [4margv[m[1m[]);[m
+       [1mint[m [1mexecvp(const[m [1mchar[m [1m*[m[4mfile[m[1m,[m [1mchar[m [1m*const[m [4margv[m[1m[]);[m
+
+[1mDESCRIPTION[m
+       The  [1mexec[m()  family of functions replaces the current process image with a new process image.  The functions described in this manual page are front-ends for the function [1mexecve[m(2).  (See the manual page for
+       [1mexecve[m() for detailed information about the replacement of the current process.)
+
+       The initial argument for these functions is the pathname of a file which is to be executed.
+
+       The [4mconst[m [4mchar[m [4m*arg[m and subsequent ellipses in the [1mexecl[m(), [1mexeclp[m(), and [1mexecle[m() functions can be thought of as [4marg0[m, [4marg1[m, ..., [4margn[m.  Together they describe a list of one or more pointers to  null-termi-
+       nated  strings that represent the argument list available to the executed program.  The first argument, by convention, should point to the filename associated with the file being executed.  The list of argu-
+       ments [4mmust[m be terminated by a NULL pointer, and, since these are variadic functions, this pointer must be cast [1m(char[m [1m*)[m [1mNULL[m.
+
+       The [1mexecv[m() and [1mexecvp[m() functions provide an array of pointers to null-terminated strings that represent the argument list available to the new program.  The first argument, by convention, should  point  to
+       the filename associated with the file being executed.  The array of pointers [4mmust[m be terminated by a NULL pointer.
+
+       The [1mexecle[m() function also specifies the environment of the executed process by following the NULL pointer that terminates the list of arguments in the parameter list or the pointer to the argv array with an
+       additional parameter.  This additional parameter is an array of pointers to null-terminated strings and [4mmust[m be terminated by a NULL pointer.  The other functions take the environment  for  the  new  process
+       image from the external variable [4menviron[m in the current process.
+
+       Some of these functions have special semantics.
+
+       The  functions [1mexeclp[m() and [1mexecvp[m() will duplicate the actions of the shell in searching for an executable file if the specified filename does not contain a slash (/) character.  The search path is the path
+       specified in the environment by the [1mPATH[m variable.  If this variable isn’t specified, the default path ‘‘:/bin:/usr/bin’’ is used.  In addition, certain errors are treated specially.
+
+       If permission is denied for a file (the attempted [1mexecve[m() returned [1mEACCES[m), these functions will continue searching the rest of the search path.  If no other file is found, however, they  will  return  with
+       the global variable [4merrno[m set to [1mEACCES[m.
+
+       If the header of a file isn’t recognized (the attempted [1mexecve[m() returned [1mENOEXEC[m), these functions will execute the shell with the path of the file as its first argument.  (If this attempt fails, no further
+       searching is done.)
+
+[1mRETURN[m [1mVALUE[m
+       If any of the [1mexec[m() functions returns, an error will have occurred.  The return value is -1, and the global variable [4merrno[m will be set to indicate the error.
+
+[1mFILES[m
+       [4m/bin/sh[m
+
+[1mERRORS[m
+       All of these functions may fail and set [4merrno[m for any of the errors specified for the library function [1mexecve[m(2).
+:[K[K[?1l>[2J[?47l8Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ls -l
+total 28
+-rwx------ 1 atan009 classes 24079 Oct 21 23:04 a.out
+-rw------- 1 atan009 classes  3061 Oct 21 22:57 hw0.cpp
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ls -laC
+.  ..  a.out  hw0.cpp  .nfs000000000038556600000dc2
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ls -F
+a.out*	hw0.cpp
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ls -a -l
+Command failed to run: Bad address
+Command failed to run: No such file or directory
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ mkdir test
+atan009@well.cs.ucr.edu $ cd tes      rmdir test
+atan009@well.cs.ucr.edu $ ls
+a.out  hw0.cpp
+atan009@well.cs.ucr.edu $ ls -a && echo Hello
+ls: &&: No such file or directory
+ls: echo: No such file or directory
+ls: Hello: No such file or directory
+Command failed to run: No such file or directory
+Command failed to run: No such file or directory
+Hello
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ cd ..
+Command failed to run: No such file or directory
+Command failed to run: Permission denied
+atan009@well.cs.ucr.edu $ top
+[H[2J[mtop - 23:17:02 up 21 days,  6:54, 60 users,  load average: 0.15, 0.13, 0.13[m[m[K
+Tasks:[m[m[m 1356 [m[mtotal,[m[m[m   1 [m[mrunning,[m[m[m 1355 [m[msleeping,[m[m[m   0 [m[mstopped,[m[m[m   0 [m[mzombie[m[m[K
+Cpu(s):[m[m[m  0.2%[m[mus,[m[m[m  0.1%[m[msy,[m[m[m  0.0%[m[mni,[m[m[m 99.7%[m[mid,[m[m[m  0.0%[m[mwa,[m[m[m  0.0%[m[mhi,[m[m[m  0.0%[m[msi,[m[m[m  0.0%[m[mst[m[m[K
+Mem: [m[m[m 264285364k [m[mtotal,[m[m[m 14553312k [m[mused,[m[m[m 249732052k [m[mfree,[m[m[m   453896k [m[mbuffers[m[m[K
+Swap:[m[m[m 23438072k [m[mtotal,[m[m[m        0k [m[mused,[m[m[m 23438072k [m[mfree,[m[m[m 11401500k [m[mcached[m[m[K
+[6;1H
+[7m  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                                                                                          [m[m[K
+[m[m 8786 atan009   15   0 17876 2136  852 R 14.8  0.0   0:00.17 top                                                                                                                                                                              [m[m
+[m 8785 root      15   0  121m 2044 1204 S  8.1  0.0   0:00.11 crond                                                                                                                                                                            [m[m
+[m 8784 jpere043  16   0 98532 3284 2160 S  2.7  0.0   0:00.10 vim                                                                                                                                                                              [m[m
+[m 3802 shern026  15   0 17304 1364 1076 S  1.3  0.0   0:02.20 gam_server                                                                                                                                                                       [m[m
+[m 7636 atost001  15   0 62656 3572 2848 S  1.3  0.0   0:00.59 ssh                                                                                                                                                                              [m[m
+[m    1 root      15   0 10372  640  544 S  0.0  0.0   0:25.16 init                                                                                                                                                                             [m[m
+[m    2 root      RT  -5     0    0    0 S  0.0  0.0   0:01.42 migration/0                                                                                                                                                                      [m[m
+[m    3 root      34  19     0    0    0 S  0.0  0.0   0:00.27 ksoftirqd/0                                                                                                                                                                      [m[m
+[m    4 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/0                                                                                                                                                                       [m[m
+[m    5 root      RT  -5     0    0    0 S  0.0  0.0   0:00.14 migration/1                                                                                                                                                                      [m[m
+[m    6 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1                                                                                                                                                                      [m[m
+[m    7 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/1                                                                                                                                                                       [m[m
+[m    8 root      RT  -5     0    0    0 S  0.0  0.0   0:00.01 migration/2                                                                                                                                                                      [m[m
+[m    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2                                                                                                                                                                      [m[m
+[m   10 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/2                                                                                                                                                                       [m[m
+[m   11 root      RT  -5     0    0    0 S  0.0  0.0   0:00.01 migration/3                                                                                                                                                                      [m[m
+[m   12 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3                                                                                                                                                                      [m[m
+[m   13 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/3                                                                                                                                                                       [m[m
+[m   14 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 migration/4                                                                                                                                                                      [m[m
+[m   15 root      34  19     0    0    0 S  0.0  0.0   0:00.01 ksoftirqd/4                                                                                                                                                                      [m[m
+[m   16 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/4                                                                                                                                                                       [m[m
+[m   17 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 migration/5                                                                                                                                                                      [m[m
+[m   18 root      34  19     0    0    0 S  0.0  0.0   1:36.34 ksoftirqd/5                                                                                                                                                                      [m[m
+[m   19 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/5                                                                                                                                                                       [m[m
+[m   20 root      RT  -5     0    0    0 S  0.0  0.0   0:01.71 migration/6                                                                                                                                                                      [m[m
+[m   21 root      34  19     0    0    0 S  0.0  0.0   0:00.01 ksoftirqd/6                                                                                                                                                                      [m[m
+[m   22 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/6                                                                                                                                                                       [m[m
+[m   23 root      RT  -5     0    0    0 S  0.0  0.0   0:00.31 migration/7                                                                                                                                                                      [m[m
+[m   24 root      34  19     0    0    0 S  0.0  0.0   0:00.06 ksoftirqd/7                                                                                                                                                                      [m[m
+[m   25 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/7                                                                                                                                                                       [m[m
+[m   26 root      RT  -5     0    0    0 S  0.0  0.0   0:00.14 migration/8                                                                                                                                                                      [m[m
+[m   27 root      34  19     0    0    0 S  0.0  0.0   0:00.04 ksoftirqd/8                                                                                                                                                                      [m[m
+[m   28 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/8                                                                                                                                                                       [m[m
+[m   29 root      RT  -5     0    0    0 S  0.0  0.0   0:00.17 migration/9                                                                                                                                                                      [m[m
+[m   30 root      34  19     0    0    0 S  0.0  0.0   0:00.06 ksoftirqd/9                                                                                                                                                                      [m[m
+[m   31 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/9                                                                                                                                                                       [m[m
+[m   32 root      RT  -5     0    0    0 S  0.0  0.0   0:00.08 migration/10                                                                                                                                                                     [m[m
+[m   33 root      34  19     0    0    0 S  0.0  0.0   0:00.04 ksoftirqd/10                                                                                                                                                                     [m[m
+[m   34 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/10                                                                                                                                                                      [m[m
+[m   35 root      RT  -5     0    0    0 S  0.0  0.0   0:00.04 migration/11                                                                                                                                                                     [m[m
+[m   36 root      34  19     0    0    0 S  0.0  0.0   0:00.16 ksoftirqd/11                                                                                                                                                                     [m[m
+[m   37 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/11                                                                                                                                                                      [m[m
+[m   38 root      RT  -5     0    0    0 S  0.0  0.0   0:03.18 migration/12                                                                                                                                                                     [m[m
+[m   39 root      34  19     0    0    0 S  0.0  0.0   0:00.75 ksoftirqd/12                                                                                                                                                                     [m[m
+[m   40 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 watchdog/12                                                                                                                                                                      [m[m
+[m   41 root      RT  -5     0    0    0 S  0.0  0.0   0:00.05 migration/13                                                                                                                                                                     [m[m
+[m   42 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/13                                                                                                                                                                     [m[m[6;1H[K[55;1H
+atan009@well.cs.ucr.edu $ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether 00:25:90:58:de:30 brd ff:ff:ff:ff:ff:ff
+    inet 169.235.30.192/24 brd 169.235.30.255 scope global eth0
+    inet6 fe80::225:90ff:fe58:de30/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 00:25:90:58:de:31 brd ff:ff:ff:ff:ff:ff
+4: sit0: <NOARP> mtu 1480 qdisc noop 
+    link/sit 0.0.0.0 brd 0.0.0.0
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:25:90:58:DE:30  
+          inet addr:169.235.30.192  Bcast:169.235.30.255  Mask:255.255.255.0
+          inet6 addr: fe80::225:90ff:fe58:de30/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:406967785 errors:0 dropped:0 overruns:639 frame:0
+          TX packets:385723098 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:167105624445 (155.6 GiB)  TX bytes:245560399547 (228.6 GiB)
+          Memory:dfe60000-dfe80000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:104779060 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:104779060 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:162399775318 (151.2 GiB)  TX bytes:162399775318 (151.2 GiB)
+
+atan009@well.cs.ucr.edu $ man man
+7[?47h[?1h=man(1)                                                                  man(1)
+
+[1mNAME[m
+       man - format and display the on-line manual pages
+
+[1mSYNOPSIS[m
+       [1mman[m [[1m-acdfFhkKtwW[m] [[1m--path[m] [[1m-m[m [4msystem[m] [[1m-p[m [4mstring[m] [[1m-C[m [4mconfig_file[m] [[1m-M[m [4mpathlist[m] [[1m-P[m [4mpager[m] [[1m-B[m [4mbrowser[m] [[1m-H[m [4mhtmlpager[m] [[1m-S[m [4msection_list[m] [[4msection[m] [4mname[m [4m...[m
+
+[1mDESCRIPTION[m
+       [1mman[m  formats and displays the on-line manual pages.  If you specify [4msection[m, [1mman[m only looks in that section of the manual.  [4mname[m is normally the name of the manual page, which is typically the name of a com-
+       mand, function, or file.  However, if [4mname[m contains a slash ([1m/[m) then [1mman[m interprets it as a file specification, so that you can do [1mman[m [1m./foo.5[m or even [1mman[m [1m/cd/foo/bar.1.gz[m.
+
+       See below for a description of where [1mman[m looks for the manual page files.
+
+[1mOPTIONS[m
+       [1m-C[m  [1mconfig_file[m
+              Specify the configuration file to use; the default is [1m/etc/man.config[m.  (See [1mman.config[m(5).)
+
+       [1m-M[m  [1mpath[m
+              Specify the list of directories to search for man pages.  Separate the directories with colons.  An empty list is the same as not specifying [1m-M[m at all.  See [1mSEARCH[m [1mPATH[m [1mFOR[m [1mMANUAL[m [1mPAGES[m.
+
+       [1m-P[m  [1mpager[m
+              Specify which pager to use.  This option overrides the [1mMANPAGER[m environment variable, which in turn overrides the [1mPAGER[m variable.  By default, [1mman[m uses [1m/usr/bin/less[m [1m-is[m.
+
+       [1m-B[m     Specify which browser to use on HTML files.  This option overrides the [1mBROWSER[m environment variable. By default, [1mman[m uses [1m/usr/bin/less[m-is[1m,[m
+
+       [1m-H[m     Specify a command that renders HTML files as text.  This option overrides the [1mHTMLPAGER[m environment variable. By default, [1mman[m uses [1m/bin/cat[m,
+
+       [1m-S[m  [1msection_list[m
+              List is a colon separated list of manual sections to search.  This option overrides the [1mMANSECT[m environment variable.
+
+       [1m-a[m     By default, [1mman[m will exit after displaying the first manual page it finds.  Using this option forces [1mman[m to display all the manual pages that match [1mname,[m not just the first.
+
+       [1m-c[m     Reformat the source man page, even when an up-to-date cat page exists.  This can be meaningful if the cat page was formatted for a screen with a different number of columns,  or  if  the  preformatted
+              page is corrupted.
+
+       [1m-d[m     Don’t actually display the man pages, but do print gobs of debugging information.
+
+       [1m-D[m     Both display and print debugging info.
+
+       [1m-f[m     Equivalent to [1mwhatis[m.
+
+       [1m-F[m or [1m--preformat[m
+              Format only - do not display.
+
+       [1m-h[m     Print a help message and exit.
+
+       [1m-k[m     Equivalent to [1mapropos[m.
+
+       [1m-K[m     Search for the specified string in *all* man pages. Warning: this is probably very slow! It helps to specify a section.  (Just to give a rough idea, on my machine this takes about a minute per 500 man
+              pages.)
+
+       [1m-m[m  [1msystem[m
+:[K[K[?1l>[2J[?47l8What manual page do you want?
+atan009@well.cs.ucr.edu $ ;
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ls;  -a; echo hello
+ls: invalid option -- ;
+Try `ls --help' for more information.
+Command failed to run: No such file or directory
+hello
+Command failed to run: No such file or directory
+atan009@well.cs.ucr.edu $ ./a.out
+atan009@well.cs.ucr.edu $ exit
+atan009@well.cs.ucr.edu $ exit
 ~/rshell/src
 atan009@well $ exit
 exit
 
-Script done on Mon 20 Oct 2014 06:31:57 PM PDT
+Script done on Tue 21 Oct 2014 11:22:28 PM PDT

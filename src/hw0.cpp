@@ -33,6 +33,16 @@ int main(int argc, char *argv[]) {
                         exit(0);//exits the program if exit is found
                 }
 
+		bool orS = false;// ||
+		bool amper = false;// &&
+
+		if (cmds.find("||") != std::string::npos) {//if user inputed ||
+			orS = true;
+		}
+		if (cmds.find("&&") != std::string::npos) {//if user inputed &&
+			amper = true;
+		}
+
 
 		int sz = cmds.size();//size of what user typed in
 
@@ -47,6 +57,7 @@ int main(int argc, char *argv[]) {
 			break;
 			}//break b/c everything after null char will be ignored
 		}
+
 	
 		char** cstr = new char*[sz+1];//what parse will be parsed into
 
@@ -54,7 +65,7 @@ int main(int argc, char *argv[]) {
 
 		vector<char*> first;//vctr to hold all commands
 
-        	char *pch = strtok(parse, " ;");//parsing with space char
+        	char* pch = strtok(parse, " ");//parsing with space char
         	while (pch != NULL)//until we hit a null character
         	{
         		cstr[counter] = pch;//parsing into cstr
@@ -67,16 +78,23 @@ int main(int argc, char *argv[]) {
 		unsigned int i = 0;//counter for cmds
 		while (i < first.size()) {
 			int pid = fork();//child
-		
-	                if(pid == 0)//if parent
-        	        {
-                        wait(0);//wait until child finishes
- 
-          		if(execvp(first.at(i),cstr) == -1) {//run the cmds
-                       	        perror("Command failed to run");//err msg
-                               	exit(1);
-                      	}
 
+				
+		
+	                if(pid == 0)//if child
+        	        {
+          			if(execvp(first.at(i),&first.at(i)) == -1) {//run the cmds
+                       	        	perror("Command failed to run");//err msg
+                               		exit(1);
+                      		}
+
+				//else if (orS == true) {//efforts to make or work
+				//	if (execvp(first.at(i),&first.at(i)) == -1) {
+				//	i+=2;
+				//	execvp(first.at(i), &first.at(i));
+				//	exit(1);
+				//	}
+				//}
 				exit(0);
 			}
 
@@ -88,8 +106,14 @@ int main(int argc, char *argv[]) {
 				perror("Child failed");//err message
 				exit(1);
 			}
+
+			else {
+				if (wait(NULL) == -1) {//wait for child
+					perror("wait failed");//err message
+				}
+			}
 			i++;//increment counter
 		}
-	}	
+	}
 	return 0;
 }
