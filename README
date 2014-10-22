@@ -6,5 +6,5 @@ echo works, but having # will cut everything out
 echo will also cout a failed function call but work
 flags work but will give out an error message
 cd does not work
-semicolon and pipe and and do not work - connecters do not work
+; and pipe and && do not work - connecters do not work
 ls can run but not with MUTLTIPLE flags
