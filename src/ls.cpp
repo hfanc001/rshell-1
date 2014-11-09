@@ -1,7 +1,10 @@
+#include <time.h>
+#include <sstream>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <pwd.h>
 #include <grp.h>
+#include <iomanip>
 #include <unistd.h>
 #include <dirent.h>
 #include <errno.h>
@@ -141,12 +144,29 @@ void lflagOnly() {
 	if (errno != 0) {
 	    perror("userid");
 	}
+
 	cout << userid << ' ';
 
 	string groupid = getgrgid(buf.st_gid)->gr_name;
+	if (errno != 0) {
+	    perror("group ID");
+	}
 	cout << groupid << ' ';
 
 	cout << buf.st_size << ' ';
+
+	time_t t = buf.st_mtime;
+	struct tm lt;
+	localtime_r(&t, &lt);
+	char timbuf[80];
+	strftime(timbuf, sizeof(timbuf), "%h", &lt);
+	cout << timbuf << ' ';
+
+	strftime(timbuf, sizeof(timbuf), "%d", &lt);
+	cout << timbuf << ' ';
+
+	strftime(timbuf, sizeof(timbuf), "%R", &lt);
+	cout << timbuf << ' ';
 
         cout << direntp->d_name << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
