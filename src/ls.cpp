@@ -181,11 +181,73 @@ void lflagOnly() {
 	perror("closedir");
     }
 
-    cout << endl;
 
 	return;
 }
 
+void alflag() {
+    char *dirName = ".";
+    DIR *dirp = opendir(dirName);
+
+        if (dirp == NULL) {
+		perror("opendir");
+	}
+
+    dirent *direntp;
+    while ((direntp = readdir(dirp))) {
+
+	struct stat buf;
+	perm(direntp, buf);
+
+
+	stat(direntp->d_name, &buf);
+        cout << ' ';
+	cout << buf.st_nlink << ' ';
+
+	string userid = getpwuid(buf.st_uid)->pw_name;
+	if (errno != 0) {
+	    perror("userid");
+	}
+
+	cout << userid << ' ';
+
+	string groupid = getgrgid(buf.st_gid)->gr_name;
+	if (errno != 0) {
+	    perror("group ID");
+	}
+	cout << groupid << ' ';
+
+	cout << buf.st_size << ' ';
+
+	time_t t = buf.st_mtime;
+	struct tm lt;
+	localtime_r(&t, &lt);
+	char timbuf[80];
+	strftime(timbuf, sizeof(timbuf), "%h", &lt);
+	cout << timbuf << ' ';
+
+	strftime(timbuf, sizeof(timbuf), "%d", &lt);
+	cout << timbuf << ' ';
+
+	strftime(timbuf, sizeof(timbuf), "%R", &lt);
+	cout << timbuf << ' ';
+
+        cout << direntp->d_name << endl; //stat here to find attributes of file
+	if (stat(dirName, &buf) == -1) {
+	    perror("stat");
+	}
+	if (errno != 0) {
+		perror("readdir");
+	}
+    }
+
+    if (closedir(dirp) == -1) {
+	perror("closedir");
+    }
+
+
+	return;
+}
 int main() {
 
     string getflags;
@@ -201,16 +263,21 @@ int main() {
 	exit(0);
     }
 
-    if (getflags.find("-a") != std::string::npos) {
+    if (getflags.find("-a") != string::npos) {
 	aflag = true;
     }
 
-    if (getflags.find("-l") != std::string::npos) {
+    if (getflags.find("-l") != string::npos) {
 	lflag = true;
     }
 
-	if (getflags.find("-R") != std::string::npos) {
+    if (getflags.find("-R") != string::npos) {
         rflag = true;
+    }
+
+    if (getflags.find("-al") != string::npos || getflags.find("-la") != string::npos) {
+	aflag = true;
+	lflag = true;
     }
 
 
@@ -224,6 +291,10 @@ int main() {
 
     else if(aflag == false && lflag == true && rflag == false) {
 	lflagOnly();
+    }
+
+    else if(aflag == true && lflag == true && rflag == false) {
+	alflag();
     }
 
 	return 0;
