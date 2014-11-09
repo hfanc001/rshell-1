@@ -146,6 +146,8 @@ void lflagOnly() {
 	string groupid = getgrgid(buf.st_gid)->gr_name;
 	cout << groupid << ' ';
 
+	cout << buf.st_size << ' ';
+
         cout << direntp->d_name << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
 	    perror("stat");
