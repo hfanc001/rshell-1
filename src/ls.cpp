@@ -3,7 +3,9 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <errno.h>
+#include <stdio.h>
 #include <string>
+#include <fcntl.h>
 #include <iostream>
 
 using namespace std;
@@ -35,6 +37,19 @@ void perm(dirent *direntp, struct stat buf) {
     else if(S_ISSOCK(buf.st_mode)) {
 	cout << 's';
     }
+
+
+    (buf.st_mode & S_IRUSR) ? cout << 'r' : cout << '-';
+    (buf.st_mode & S_IWUSR) ? cout << 'w' : cout << '-';
+    (buf.st_mode & S_IXUSR) ? cout << 'x' : cout << '-';
+
+    (buf.st_mode & S_IRGRP) ? cout << 'r' : cout << '-';
+    (buf.st_mode & S_IWGRP) ? cout << 'w' : cout << '-';
+    (buf.st_mode & S_IXGRP) ? cout << 'x' : cout << '-';
+
+    (buf.st_mode & S_IROTH) ? cout << 'r' : cout << '-';
+    (buf.st_mode & S_IWOTH) ? cout << 'w' : cout << '-';
+    (buf.st_mode & S_IXOTH) ? cout << 'x' : cout << '-';
 }
 
 void noflags() {
@@ -109,11 +124,13 @@ void lflagOnly() {
     dirent *direntp;
     while ((direntp = readdir(dirp))) {
 	if (direntp->d_name[0] == '.') {
-	    continue;
+	//    continue;
 	}
 
 	struct stat buf;
 	perm(direntp, buf);
+
+        cout << ' ';
 
         cout << direntp->d_name << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
