@@ -1,5 +1,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <pwd.h>
 #include <unistd.h>
 #include <dirent.h>
 #include <errno.h>
@@ -134,6 +135,12 @@ void lflagOnly() {
 	stat(direntp->d_name, &buf);
         cout << ' ';
 	cout << buf.st_nlink << ' ';
+
+	string userid = getpwuid(buf.st_uid)->pw_name;
+	if (errno != 0) {
+	    perror("userid");
+	}
+	cout << userid << ' ';
 
         cout << direntp->d_name << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
