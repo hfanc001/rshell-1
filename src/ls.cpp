@@ -124,13 +124,16 @@ void lflagOnly() {
     dirent *direntp;
     while ((direntp = readdir(dirp))) {
 	if (direntp->d_name[0] == '.') {
-	//    continue;
+	    continue;
 	}
 
 	struct stat buf;
 	perm(direntp, buf);
 
+
+	stat(direntp->d_name, &buf);
         cout << ' ';
+	cout << buf.st_nlink << ' ';
 
         cout << direntp->d_name << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
@@ -186,7 +189,7 @@ int main() {
 	aflagOnly();
     }
 
-    else if( aflag == false && lflag == true && rflag == false) {
+    else if(aflag == false && lflag == true && rflag == false) {
 	lflagOnly();
     }
 
