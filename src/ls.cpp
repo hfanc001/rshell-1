@@ -1,6 +1,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <pwd.h>
+#include <grp.h>
 #include <unistd.h>
 #include <dirent.h>
 #include <errno.h>
@@ -141,6 +142,9 @@ void lflagOnly() {
 	    perror("userid");
 	}
 	cout << userid << ' ';
+
+	string groupid = getgrgid(buf.st_gid)->gr_name;
+	cout << groupid << ' ';
 
         cout << direntp->d_name << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
