@@ -322,10 +322,8 @@ void aRflag(const string DIRNAME) {
     vector<char*> NextDir;
 
     while ((direntp = readdir(dirp))) {
-
-
-        cout << direntp->d_name << " "; //stat here to find attributes of file
 	struct stat buf;
+        cout << direntp->d_name << " "; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
 	    perror("stat");
 	}
@@ -352,6 +350,99 @@ void aRflag(const string DIRNAME) {
 
     for (int i = 0; i < NextDir.size(); i++) {
 	RflagOnly(DIRNAME+"/"+NextDir.at(i));
+   }
+    if (closedir(dirp) == -1) {
+	perror("closedir");
+    }
+
+
+
+	return;
+}
+
+void lRflag(const string DIRNAME) {
+    const char *dirName = DIRNAME.c_str();
+    DIR *dirp = opendir(dirName);
+
+    if (dirp == NULL) {
+	perror("opendir");
+    }
+
+
+    dirent *direntp;
+
+	cout << DIRNAME << endl;
+
+    vector<char*> NextDir;
+
+    while ((direntp = readdir(dirp))) {
+	if (direntp->d_name[0] == '.') {
+	    continue;
+	}
+
+
+        cout << direntp->d_name << " "; //stat here to find attributes of file
+	struct stat buf;
+
+	perm(direntp, buf);
+
+
+	stat(direntp->d_name, &buf);
+        cout << ' ';
+	cout << buf.st_nlink << ' ';
+
+	string userid = getpwuid(buf.st_uid)->pw_name;
+	if (errno != 0) {
+	    perror("userid");
+	}
+
+	cout << userid << ' ';
+
+	string groupid = getgrgid(buf.st_gid)->gr_name;
+	if (errno != 0) {
+	    perror("group ID");
+	}
+	cout << groupid << ' ';
+
+	cout << buf.st_size << ' ';
+
+	time_t t = buf.st_mtime;
+	struct tm lt;
+	localtime_r(&t, &lt);
+	char timbuf[80];
+	strftime(timbuf, sizeof(timbuf), "%h", &lt);
+	cout << timbuf << ' ';
+
+	strftime(timbuf, sizeof(timbuf), "%d", &lt);
+	cout << timbuf << ' ';
+
+	strftime(timbuf, sizeof(timbuf), "%R", &lt);
+	cout << timbuf << ' ';
+
+	cout << endl;
+
+	if (stat(dirName, &buf) == -1) {
+	    perror("stat");
+	}
+	if (errno != 0) {
+		perror("readdir");
+	}
+
+	char test[999];
+	strcpy(test, dirName);
+	strcat(test, "/");
+	strcat(test, direntp->d_name);
+
+
+	stat(test, &buf);
+	if (S_ISDIR(buf.st_mode)) {
+		NextDir.push_back(direntp->d_name);
+	}
+
+    }
+    cout << endl << endl;
+    for (int i = 0; i < NextDir.size(); i++) {
+	lRflag(DIRNAME+"/"+NextDir.at(i));
    }
     if (closedir(dirp) == -1) {
 	perror("closedir");
@@ -399,8 +490,13 @@ int main() {
 	Rflag = true;
     }
 
+    if (getflags.find("-lR") != string::npos || getflags.find("-Rl") != string::npos) {
+	lflag = true;
+	Rflag = true;
+    }
 
-    if(aflag == false && lflag == false && Rflag == false) {
+
+    if (aflag == false && lflag == false && Rflag == false) {
 	noflags();
     }
 
@@ -408,22 +504,25 @@ int main() {
 	aflagOnly();
     }
 
-    else if(aflag == false && lflag == true && Rflag == false) {
+    else if (aflag == false && lflag == true && Rflag == false) {
 	lflagOnly();
     }
 
-    else if(aflag == false && lflag == false && Rflag == true) {
+    else if( aflag == false && lflag == false && Rflag == true) {
 	RflagOnly(DNAME);
     }
 
-    else if(aflag == true && lflag == true && Rflag == false) {
+    else if (aflag == true && lflag == true && Rflag == false) {
 	alflag();
     }
 
-    else if(aflag == true && lflag == false && Rflag == true) {
+    else if (aflag == true && lflag == false && Rflag == true) {
 	aRflag(DNAME);
     }
 
+    else if (aflag == false && lflag == true && Rflag == true) {
+	lRflag(DNAME);
+    }
 
 	return 0;
 }
