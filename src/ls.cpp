@@ -1,3 +1,5 @@
+#include <queue>
+#include <vector>
 #include <time.h>
 #include <sstream>
 #include <sys/types.h>
@@ -185,6 +187,61 @@ void lflagOnly() {
 	return;
 }
 
+void RflagOnly(const string DIRNAME) {
+    const char *dirName = DIRNAME.c_str();
+    DIR *dirp = opendir(dirName);
+
+    if (dirp == NULL) {
+	perror("opendir");
+    }
+
+
+    dirent *direntp;
+
+	cout << DIRNAME << endl;
+
+    vector<char*> NextDir;
+
+    while ((direntp = readdir(dirp))) {
+	if (direntp->d_name[0] == '.') {
+	    continue;
+	}
+
+
+        cout << direntp->d_name << " "; //stat here to find attributes of file
+	struct stat buf;
+	if (stat(dirName, &buf) == -1) {
+	    perror("stat");
+	}
+	if (errno != 0) {
+		perror("readdir");
+	}
+
+	char test[999];
+	strcpy(test, dirName);
+	strcat(test, "/");
+	strcat(test, direntp->d_name);
+
+
+	stat(test, &buf);
+	if (S_ISDIR(buf.st_mode)) {
+		NextDir.push_back(direntp->d_name);
+	}
+
+    }
+    cout << endl << endl;
+    for (int i = 0; i < NextDir.size(); i++) {
+	RflagOnly(DIRNAME+"/"+NextDir.at(i));
+   }
+    if (closedir(dirp) == -1) {
+	perror("closedir");
+    }
+
+
+
+	return;
+}
+
 void alflag() {
     char *dirName = ".";
     DIR *dirp = opendir(dirName);
@@ -246,7 +303,7 @@ void alflag() {
     }
 
 
-	return;
+    return;
 }
 int main() {
 
@@ -256,9 +313,9 @@ int main() {
 
     bool aflag = false;
     bool lflag = false;
-    bool rflag = false;
+    bool Rflag = false;
 
-
+    string DNAME = ".";
     if (getflags.find("ls") == std::string::npos) {
 	exit(0);
     }
@@ -272,7 +329,7 @@ int main() {
     }
 
     if (getflags.find("-R") != string::npos) {
-        rflag = true;
+        Rflag = true;
     }
 
     if (getflags.find("-al") != string::npos || getflags.find("-la") != string::npos) {
@@ -281,21 +338,26 @@ int main() {
     }
 
 
-    if(aflag == false && lflag == false && rflag == false) {
+    if(aflag == false && lflag == false && Rflag == false) {
 	noflags();
     }
 
-    else if (aflag == true && lflag == false && rflag == false) {
+    else if (aflag == true && lflag == false && Rflag == false) {
 	aflagOnly();
     }
 
-    else if(aflag == false && lflag == true && rflag == false) {
+    else if(aflag == false && lflag == true && Rflag == false) {
 	lflagOnly();
     }
 
-    else if(aflag == true && lflag == true && rflag == false) {
+    else if(aflag == false && lflag == false && Rflag == true) {
+	RflagOnly(DNAME);
+    }
+
+    else if(aflag == true && lflag == true && Rflag == false) {
 	alflag();
     }
+
 
 	return 0;
 }
