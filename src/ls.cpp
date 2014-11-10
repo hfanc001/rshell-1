@@ -305,6 +305,63 @@ void alflag() {
 
     return;
 }
+
+void aRflag(const string DIRNAME) {
+    const char *dirName = DIRNAME.c_str();
+    DIR *dirp = opendir(dirName);
+
+    if (dirp == NULL) {
+	perror("opendir");
+    }
+
+
+    dirent *direntp;
+
+	cout << DIRNAME << endl;
+
+    vector<char*> NextDir;
+
+    while ((direntp = readdir(dirp))) {
+
+
+        cout << direntp->d_name << " "; //stat here to find attributes of file
+	struct stat buf;
+	if (stat(dirName, &buf) == -1) {
+	    perror("stat");
+	}
+	if (errno != 0) {
+		perror("readdir");
+	}
+
+	char test[999];
+	strcpy(test, dirName);
+	strcat(test, "/");
+	strcat(test, direntp->d_name);
+
+	if (direntp->d_name[0] == '.') {
+	    continue;
+	}
+
+	stat(test, &buf);
+	if (S_ISDIR(buf.st_mode)) {
+		NextDir.push_back(direntp->d_name);
+	}
+    }
+    cout << endl << endl;
+
+
+    for (int i = 0; i < NextDir.size(); i++) {
+	RflagOnly(DIRNAME+"/"+NextDir.at(i));
+   }
+    if (closedir(dirp) == -1) {
+	perror("closedir");
+    }
+
+
+
+	return;
+}
+
 int main() {
 
     string getflags;
@@ -337,6 +394,11 @@ int main() {
 	lflag = true;
     }
 
+    if (getflags.find("-aR") != string::npos || getflags.find("-Ra") != string::npos) {
+	aflag = true;
+	Rflag = true;
+    }
+
 
     if(aflag == false && lflag == false && Rflag == false) {
 	noflags();
@@ -356,6 +418,10 @@ int main() {
 
     else if(aflag == true && lflag == true && Rflag == false) {
 	alflag();
+    }
+
+    else if(aflag == true && lflag == false && Rflag == true) {
+	aRflag(DNAME);
     }
 
 
