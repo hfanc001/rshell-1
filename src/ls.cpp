@@ -59,6 +59,45 @@ void perm(dirent *direntp, struct stat buf) {//function that gets the permission
     (buf.st_mode & S_IXOTH) ? cout << 'x' : cout << '-';
 }
 
+void CoutColor(dirent *direntp) {
+    struct stat buf;
+    lstat(direntp->d_name, &buf);//to check DIR/EXEC
+    if (errno != 0) {//error checking
+        perror("lstat");
+    }
+
+
+
+    // \033 is ESC. the first number, in this case 0, will normal
+    // text. the second number, 34, will change the color. The next
+    // \33 along with the two 'm' chars will state when the message
+    // will end. Otherwise the color effect would continue.
+    if (S_ISDIR(buf.st_mode) && direntp->d_name[0] != '.') {//Non-hidden directories
+	cout << "\033[0;34m" << direntp->d_name << "\33[0m";
+    }
+
+    else if ((buf.st_mode & S_IXUSR) && direntp->d_name[0] != '.') {//Non-hidden executables
+	cout << "\033[0;32m" << direntp->d_name << "\33[0m";
+    }
+
+    else if (S_ISDIR(buf.st_mode) && direntp->d_name[0] == '.') {//hidden directories
+	cout << "\033[47m\033[38;5;34m" << direntp->d_name << "\33[0;0m";
+    }
+
+    else if ((buf.st_mode & S_IXUSR) && direntp->d_name[0] == '.') {//hidden executables
+	cout << "\033[47m\033[38;5;32m" << direntp->d_name << "\33[0;0m";
+    }
+
+    else if (direntp->d_name[0] == '.') {//regular hidden files
+	cout << "\033[0;47m" << direntp->d_name << "\33[0m";
+    }
+
+    else {//regular files
+	cout << direntp->d_name;
+    }
+}
+
+
 void noflags() {//no flags are given but ls is
     char *dirName = ".";//current directory
     DIR *dirp = opendir(dirName);//open directory
@@ -79,7 +118,8 @@ void noflags() {//no flags are given but ls is
 	}
 
 
-        cout << direntp->d_name << " "; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << " "; //stat here to find attributes of file
 	struct stat buf;
 	if (stat(dirName, &buf) == -1) {//error checking and stat
 	    perror("stat");
@@ -111,7 +151,8 @@ void aflagOnly() {//only -a flag
 	    perror("readdir");
 	}
 
-        cout << direntp->d_name << " "; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << " "; //stat here to find attributes of file
 	struct stat buf;
 	if (stat(dirName, &buf) == -1) {//error checking and stat
 	    perror("stat");
@@ -194,7 +235,8 @@ void lflagOnly() {//only -l flag
 	strftime(timbuf, sizeof(timbuf), "%R", &lt);//24hour HH:MM
 	cout << timbuf << ' ';
 
-        cout << direntp->d_name << endl; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {//stat + error checking
 	    perror("stat");
 	}
@@ -219,6 +261,7 @@ void RflagOnly(const string DIRNAME) {//only R flag with DIRNAME for recursion
 
     dirent *direntp;
 
+
     cout << DIRNAME << endl;//cout the filename
 
     vector<char*> NextDir;//vector to store directories
@@ -232,8 +275,8 @@ void RflagOnly(const string DIRNAME) {//only R flag with DIRNAME for recursion
 	    continue;
 	}
 
-
-        cout << direntp->d_name << " "; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << " "; //stat here to find attributes of file
 	struct stat buf;
 	if (stat(dirName, &buf) == -1) {//stat + error checking
 	    perror("stat");
@@ -331,7 +374,8 @@ void alflag() {//-a flag and -l flag
 	strftime(timbuf, sizeof(timbuf), "%R", &lt);//24hour HH:MM
 	cout << timbuf << ' ';
 
-        cout << direntp->d_name << endl; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {//error checking + stat
 	    perror("stat");
 	}
@@ -366,7 +410,8 @@ void aRflag(const string DIRNAME) {//-a flag and -R flag
 	}
 
 	struct stat buf;
-        cout << direntp->d_name << " "; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << " "; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {//stat + error checking
 	    perror("stat");
 	}
@@ -428,8 +473,6 @@ void lRflag(const string DIRNAME) {//-l flag and -R flag
 	    continue;
 	}
 
-
-        cout << direntp->d_name << " "; //stat here to find attributes of file
 	struct stat buf;
 
 	perm(direntp, buf);//get permissions
@@ -475,6 +518,8 @@ void lRflag(const string DIRNAME) {//-l flag and -R flag
 
 	strftime(timbuf, sizeof(timbuf), "%R", &lt);//24hour HH:MM
 	cout << timbuf << ' ';
+
+	CoutColor(direntp);
 
 	cout << endl;
 
@@ -573,8 +618,8 @@ void alRflag(const string DIRNAME) {//-a -l -R flags
 	strftime(timbuf, sizeof(timbuf), "%R", &lt);//24hour HH:MM
 	cout << timbuf << ' ';
 
-
-        cout << direntp->d_name << " " << endl; //stat here to find attributes of file
+	CoutColor(direntp);
+        cout << " " << endl; //stat here to find attributes of file
 	if (stat(dirName, &buf) == -1) {
 	    perror("stat");
 	}
@@ -612,6 +657,7 @@ void alRflag(const string DIRNAME) {//-a -l -R flags
 }
 
 int main() {
+
 
     string getflags;//gets flag and ls command
     getline(cin,getflags);
